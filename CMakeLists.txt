@@ -12,8 +12,4 @@ set(CMAKE_AUTOMOC ON)
 # Create code from a list of Qt designer ui files
 set(CMAKE_AUTOUIC ON)
 
-add_library(qt_double_spinbox_heavy_computation_widget SHARED src/qt_double_spinbox_heavy_computation_widget.cpp src/qt_double_spinbox_heavy_computation_widget.h src/qt_double_spinbox_heavy_computation_widget.ui)
-target_link_libraries(qt_double_spinbox_heavy_computation_widget Qt5::Core Qt5::Widgets)
-
-add_executable(qt_double_spinbox_heavy_computation src/qt_double_spinbox_heavy_computation.cpp)
-target_link_libraries(qt_double_spinbox_heavy_computation Qt5::Core qt_double_spinbox_heavy_computation_widget)
+add_subdirectory(src)

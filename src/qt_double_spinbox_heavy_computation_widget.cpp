@@ -33,7 +33,7 @@ void DoubleSpinboxHeavyComputation::startHeavyComputationInThread()
   progress->show();
   connect(this, &DoubleSpinboxHeavyComputation::computationDone, progress, &QProgressDialog::close);
   connect(this, &DoubleSpinboxHeavyComputation::computationDone, progress, &QProgressDialog::deleteLater);
-  QtConcurrent::run(this, &DoubleSpinboxHeavyComputation::heavyComputation);
+  QFuture<void> f1 = QtConcurrent::run(this, &DoubleSpinboxHeavyComputation::heavyComputation);
 }
 
 void DoubleSpinboxHeavyComputation::heavyComputation()

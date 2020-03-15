@@ -3,9 +3,19 @@
 
 #include <QWidget>
 
+#ifdef _WIN32
+#ifdef QTDOULESPINBOXHEAVYCOMPUTATION
+#define EXPORT __declspec(dllexport)
+#else
+#define EXPORT __declspec(dllimport)
+#endif
+#else
+#define EXPORT
+#endif
+
 namespace Ui
 {
-class DoubleSpinboxHeavyComputation;
+class EXPORT DoubleSpinboxHeavyComputation;
 }
 
 class DoubleSpinboxHeavyComputation : public QWidget
