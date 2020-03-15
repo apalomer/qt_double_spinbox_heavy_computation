@@ -1,7 +1,9 @@
 # Set up cmake
 cmake_minimum_required (VERSION 3.0)
 project (qt_double_spinbox_heavy_computation CXX)
-add_compile_options(-std=c++17 -Wall -Wextra)
+if (UNIX)
+  add_compile_options(-std=c++17 -Wall -Wextra)
+endif()
 
 # Find LIbrary
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets)

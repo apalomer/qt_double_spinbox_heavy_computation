@@ -15,10 +15,10 @@
 
 namespace Ui
 {
-class EXPORT DoubleSpinboxHeavyComputation;
+class DoubleSpinboxHeavyComputation;
 }
 
-class DoubleSpinboxHeavyComputation : public QWidget
+class EXPORT DoubleSpinboxHeavyComputation : public QWidget
 {
   Q_OBJECT
 

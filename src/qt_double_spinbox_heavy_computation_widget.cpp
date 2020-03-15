@@ -1,7 +1,8 @@
 #include "qt_double_spinbox_heavy_computation_widget.h"
 #include "ui_qt_double_spinbox_heavy_computation_widget.h"
 
-#include <unistd.h>
+#include <chrono>
+#include <thread>
 
 #include <QDoubleSpinBox>
 #include <QProgressDialog>
@@ -38,7 +39,7 @@ void DoubleSpinboxHeavyComputation::startHeavyComputationInThread()
 
 void DoubleSpinboxHeavyComputation::heavyComputation()
 {
-  sleep(2);
+  std::this_thread::sleep_for(std::chrono::seconds(2));
   emit computationDone();
 }
 
